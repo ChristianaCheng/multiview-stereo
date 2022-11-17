@@ -7,4 +7,4 @@ Note: we restrict our focus on two view stereo reconstruction.
  - sparse correspondence (sift key points -> estimate fundamental matrix F)
  - dense correspondence (region-based 1D searching)
 ## STEP 3: 3D Reconstruction
- - disparity -> depth map
+ - disparity -> depth map -> 3D dense point cloud
