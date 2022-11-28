@@ -4,6 +4,12 @@ import cv2 as cv
 imgL = cv.imread('chess_l.png',0)
 imgR = cv.imread('chess_r.png',0)
 
+# Extract baseline, focal length from calibration file
+with open('calib_chess2.txt', 'r') as file:
+   for line in file:
+      if re.search('cam0', line): focal_length = float(line[6:13])
+      if re.search('baseline', line): baseline = float(line[9:])
+        
 # Call back function for the trackbar
 def nothing(x):
     pass
@@ -57,9 +63,12 @@ while True:
  
     # Scaling down the disparity values and normalizing them 
     disparity = (disparity/16.0 - minDisparity)/numDisparities
+    
+    # Convert from disparity to depth
+    depth = baseline*focal_length/(disparity)
  
     # Displaying the disparity map
-    cv.imshow("disp",disparity)
+    cv.imshow("disp",depth)
  
     # Close window using esc key
     if cv.waitKey(1) == 27:
