@@ -61,5 +61,5 @@ depth = depth.astype(np.uint8)
 
 plt.imshow(depth, cmap='viridis')
 plt.colorbar()
-plt.show()
 plt.savefig("depth_SGBM_norm.png")
+plt.show()
