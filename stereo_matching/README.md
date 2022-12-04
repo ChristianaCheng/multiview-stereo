@@ -5,3 +5,8 @@
     NCC: normalized cross correlation
     MI: mutual information
 ### It supports batch computation for matching cost
+
+### How to run the code?
+    Open your terminal
+    pip install -r requirements.txt # build dependency
+    python dense_matching.py to # run the code
