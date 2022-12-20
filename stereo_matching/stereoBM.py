@@ -1,3 +1,11 @@
+# ------------------------------------------------------------
+# CALCULATE DISPARITY (DEPTH MAP)
+# Adapted from: https://github.com/opencv/opencv/blob/master/samples/python/stereo_match.py
+# and: https://docs.opencv.org/master/dd/d53/tutorial_py_depthmap.html
+
+# StereoSGBM Parameter explanations:
+# https://docs.opencv.org/4.5.0/d2/d85/classcv_1_1StereoSGBM.html
+
 import cv2 as cv
 import re
 import numpy as np
