@@ -41,15 +41,15 @@ stereo = cv.StereoSGBM_create(
     P2=32 * 1 * block_size * block_size,
 )
 imgL = cv.imread('chess_l.png',0)
-#height = int(imgL.shape[0] * 0.5)
-#width = int(imgL.shape[1] * 0.5)
-#dim = (width, height)
-#imgL = cv.resize(imgL,dim) # scale the image down by a factor of 0.5
+height = int(imgL.shape[0] * 0.5)
+width = int(imgL.shape[1] * 0.5)
+dim = (width, height)
+imgL = cv.resize(imgL,dim) # scale the image down by a factor of 0.5
 imgR = cv.imread('chess_r.png',0)
-#height = int(imgR.shape[0] * 0.5)
-#width = int(imgR.shape[1] * 0.5)
-#dim = (width, height)
-#imgR = cv.resize(imgR,dim)
+height = int(imgR.shape[0] * 0.5)
+width = int(imgR.shape[1] * 0.5)
+dim = (width, height)
+imgR = cv.resize(imgR,dim)
 
 disparity_SGBM = stereo.compute(imgL, imgR)
 # Extract baseline, focal length from calibration file
